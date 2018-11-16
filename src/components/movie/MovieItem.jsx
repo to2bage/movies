@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+// 导入自定义的样式表
+import movieItemStyle from '@/css/movie/movie_item.styl';
+
 
 class MovieItem extends Component {
     constructor(props) {
@@ -7,11 +10,11 @@ class MovieItem extends Component {
     }
     render() { 
         return ( 
-            <div>
-                <img src={this.props.images.small} />
-                <h4>电影名称: {this.props.title}</h4>
-                <h4>电影类型: {this.props.genres.join(", ")}</h4>
-                <h4>上映年份: {this.props.year}年</h4>
+            <div className={movieItemStyle.box}>
+                <img src={this.props.images.small} style={{width: "100px", height: "140px", margin: "2px"}}/>
+                <h5>电影名称: {this.props.title}</h5>
+                <h5>电影类型: {this.props.genres.join(", ")}</h5>
+                <h5>上映年份: {this.props.year}年</h5>
             </div>
          );
     }
